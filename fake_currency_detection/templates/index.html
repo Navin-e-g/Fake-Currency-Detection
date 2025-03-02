@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Money Detector</title>
+</head>
+<body>
+    <h2>Fake Money Detector</h2>
+    <form action="/predict" method="POST">
+        <label for="var">Variance:</label>
+        <input type="text" id="var" name="var" required><br>
+        
+        <label for="skew">Skewness:</label>
+        <input type="text" id="skew" name="skew" required><br>
+        
+        <label for="curt">Curtosis:</label>
+        <input type="text" id="curt" name="curt" required><br>
+        
+        <label for="entr">Entropy:</label>
+        <input type="text" id="entr" name="entr" required><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
